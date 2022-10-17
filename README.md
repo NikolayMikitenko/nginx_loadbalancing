@@ -25,6 +25,9 @@ For US:
 </body>
 ```
  
+![image](https://user-images.githubusercontent.com/52753625/196203538-869f26c4-6a45-42ae-b228-9231f4c76d52.png)
+
+ 
 For other:
 ```
 <!DOCTYPE html>
@@ -33,4 +36,5 @@ For other:
 <h1>rest</h1>
 </body>
 ```
- 
+
+![image](https://user-images.githubusercontent.com/52753625/196203980-b5c7bba2-7efc-4843-bd1a-ed64597644fb.png)
