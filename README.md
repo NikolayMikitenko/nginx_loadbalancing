@@ -27,6 +27,8 @@ For US:
  
 ![image](https://user-images.githubusercontent.com/52753625/196203538-869f26c4-6a45-42ae-b228-9231f4c76d52.png)
 
+![image](https://user-images.githubusercontent.com/52753625/196204828-e6606f33-5a42-4f13-b44d-ca6115051fd3.png)
+
  
 For other:
 ```
