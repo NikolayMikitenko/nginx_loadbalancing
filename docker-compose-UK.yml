@@ -1,0 +1,64 @@
+version: '3.6'
+
+services:
+  balancer:
+    build: .
+    volumes:
+      - ./balancer/nginx.conf:/etc/nginx/nginx.conf:ro      
+      - ./GeoIP:/var/lib/GeoIP/  
+    ports:
+      - 80:80
+    networks:
+      us:
+        ipv4_address: 109.123.101.2      
+
+  app_UK:
+    image: nginx:latest
+    volumes:
+      - ./app/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./UK/index.html:/usr/share/nginx/html/index.html
+    networks:
+      us:
+        ipv4_address: 109.123.101.3      
+
+  app_US1:
+    image: nginx:latest
+    volumes:
+      - ./app/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./US/index.html:/usr/share/nginx/html/index.html
+    networks:
+      us:
+        ipv4_address: 109.123.101.4      
+
+  app_US2:
+    image: nginx:latest
+    volumes:
+      - ./app/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./US/index.html:/usr/share/nginx/html/index.html
+    networks:
+      us:
+        ipv4_address: 109.123.101.5      
+
+  app_rest:
+    image: nginx:latest
+    volumes:
+      - ./app/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./rest/index.html:/usr/share/nginx/html/index.html
+    networks:
+      us:
+        ipv4_address: 109.123.101.6      
+
+  test:
+    image: nginx:latest   
+    networks:
+      us:
+        ipv4_address: 109.123.101.155
+
+networks:
+  us:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 109.123.101.0/24
+        gateway: 109.123.101.1
+
